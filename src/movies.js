@@ -26,16 +26,26 @@ howManyMovies(movies);
 
 function ratesAverage(arr){
     if (arr.length >= 1) {
-        const ratings = arr.map(function () {
-                const total = ratings.reduce(function (acc, val) {
-                    if (typeof (arr.rate !== Number)) {
-                        return 0;
-                    } else {
-                        return acc + val;
-                    };
-                }, 0);
-                return Math.round((total / arr.length) * 100.0 / 100.0);
-            });    
+        // const ratings = arr.map(function (movie) {
+        //         const total = ratings.reduce(function (acc, val) {
+        //                 return acc + val;
+        //         }, 0);
+        //         return Math.round((total / arr.length) * 100.0 / 100.0);
+        //     });    
+        const ratings = arr.filter(function (movie) {
+            if (typeof( movie.rate !== Number)) {
+                return 0;
+            } else {
+                return movie.rate;
+            }
+        });
+
+        const total = ratings.reduce(function(acc, val) {
+            return acc+val;
+        }, 0);
+
+        return Math.round((total/arr.length)* 100)/100;
+    
     } else if (arr.length < 1) {
         return 0;
     };
@@ -43,7 +53,12 @@ function ratesAverage(arr){
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
+
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
+function orderByYear(a,b){
+    const moviesByYear = movies.sort();
+    return moviesByYear;
+}
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
