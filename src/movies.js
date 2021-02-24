@@ -47,9 +47,22 @@ function orderByYear(arr){
 }
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-function orderAlphabetically(a,b){
-    const moviesByName = movies.sort();
-    return moviesByYear;
+function orderAlphabetically(arr){
+    const moviesByName = arr.sort(function (a, b) {
+        if (a.title < b.title) {return -1;}
+        if (a.title > b.title) {return 1;}
+        return 0
+    });
+    
+    const moviesTitles = moviesByName.map(function(movie) {
+        return movie.title;
+    });
+    
+    if (arr.length > 20) {
+        return moviesTitles.splice(19)
+      } else {
+        return moviesTitles
+      };
 }
 
 
