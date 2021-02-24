@@ -55,12 +55,19 @@ function ratesAverage(arr){
 
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear(a,b){
-    const moviesByYear = movies.sort();
-    return moviesByYear;
+function orderByYear(arr){
+    const moviesbyYear = arr.slice().sort(function(a,b) {
+    return (a.year > b.year) ? 1 : (a.year === b.year) ? ((a.title > b.title) ? 1 : -1) : -1
+    });
+    return moviesbyYear;
 }
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
+function orderAlphabetically(a,b){
+    const moviesByName = movies.sort();
+    return moviesByYear;
+}
+
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
