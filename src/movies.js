@@ -34,7 +34,7 @@ function ratesAverage(movies){
     return parseFloat(average);
     } 
     }
-    
+     
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
 
